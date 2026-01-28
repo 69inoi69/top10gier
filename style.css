@@ -180,7 +180,7 @@ body.game-body { height: 100vh; overflow: hidden; }
 }
 
 .game-art-section {
-    flex: 1; background-size: cover; background-position: center; position: relative; border-right: 1px solid #333;
+    flex: 0 0 55%; background-size: cover; background-position: center; position: relative; border-right: 1px solid #333;
 }
 .game-art-section::after {
     content: ''; position: absolute; inset: 0;
@@ -189,7 +189,7 @@ body.game-body { height: 100vh; overflow: hidden; }
 }
 
 .game-info-section {
-    flex: 0 0 500px; background: #0d0d0d; padding: 35px; box-sizing: border-box;
+    flex: 0 0 45%; background: #0d0d0d; padding: 35px; box-sizing: border-box;
     display: flex; flex-direction: column; overflow: hidden; border-left: 1px solid #222; z-index: 10;
 }
 
@@ -295,5 +295,4 @@ footer {
     .big-rating { font-size: 1.5rem; }
     .btn-steam-big { padding: 7px 15px; font-size: 0.75rem; }
     .game-info-section { padding: 20px; }
-}
 }
