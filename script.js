@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================
     const introElement = document.getElementById('intro-text');
     if (introElement) {
-        const textToType = "System gotowy. Wczytywanie najlepszych gier w historii...";
+        const textToType = "System gotowy. Wczytywanie najlepszej dziesiątki gier według... mnie 😉";
         let index = 0;
 
         function typeWriter() {
