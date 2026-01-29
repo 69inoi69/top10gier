@@ -112,6 +112,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Scroll-down button -> smooth scroll to the first tier section
+    const scrollBtn = document.querySelector('.scroll-down');
+    if (scrollBtn) {
+        scrollBtn.addEventListener('click', () => {
+            const nextSection = document.querySelector('.tier-box');
+            const headerHeight = document.querySelector('.launcher-header')?.offsetHeight || 0;
+            if (nextSection) {
+                const targetY = nextSection.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+                window.scrollTo({ top: targetY, behavior: 'smooth' });
+            } else {
+                window.scrollTo({ top: window.scrollY + window.innerHeight, behavior: 'smooth' });
+            }
+        });
+    }
 });
 
 // Funkcja wyświetlająca powiadomienia (Toast)
