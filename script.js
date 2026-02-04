@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================
     const introElement = document.getElementById('intro-text');
     if (introElement) {
-        const textToType = "System gotowy. Wczytywanie najlepszej dziesiątki gier według... mnie 😉";
+        const textToType = "System gotowy. Wczytywanie najlepszej dziesiątki gier według mnie...";
         let index = 0;
 
         function typeWriter() {
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const nextSection = document.querySelector('.tier-box');
             const headerHeight = document.querySelector('.launcher-header')?.offsetHeight || 0;
             if (nextSection) {
-                const targetY = nextSection.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+                const targetY = nextSection.getBoundingClientRect().top + window.scrollY - headerHeight;
                 window.scrollTo({ top: targetY, behavior: 'smooth' });
             } else {
                 window.scrollTo({ top: window.scrollY + window.innerHeight, behavior: 'smooth' });

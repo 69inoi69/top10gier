@@ -94,8 +94,8 @@ body {
     padding-top: calc(var(--header-height) + 40px); width: 100%; box-sizing: border-box; flex: 1; 
 }
 .intro-section { text-align: center; margin-bottom: 20px; min-height: 30px; }
-.typing-text { font-size: 1.2rem; color: var(--accent); font-family: 'Courier New', monospace; text-transform: uppercase; letter-spacing: 2px; }
-.cursor { display: inline-block; width: 8px; height: 1.2rem; background: var(--accent); animation: blink 1s infinite; vertical-align: middle; margin-left: 5px; }
+.typing-text { font-size: 1.5rem; color: var(--accent); font-family: 'Courier New', monospace; text-transform: uppercase; letter-spacing: 2px; }
+.cursor { display: inline-block; width: 8px; height: 1.5rem; background: var(--accent); animation: blink 1s infinite; vertical-align: middle; margin-left: 5px; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 .steam-hero {
@@ -334,7 +334,7 @@ footer {
         gap: 5px;
     }
     .tier-header h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
         letter-spacing: 2px;
         text-align: center;
     }
