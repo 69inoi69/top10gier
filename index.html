@@ -1,156 +1,289 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hall of Fame - Biblioteka Gier</title>
-    <meta name="description" content="Moja kolekcja najlepszych gier. Projekt zaliczeniowy.">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <meta
+      name="description"
+      content="Moja kolekcja najlepszych gier. Projekt zaliczeniowy."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="launcher-header">
-        <div class="header-left">
-            <a href="index.html" class="logo-link">
-                <div class="logo">
-                    TOP 
-                    <img src="grafika/samodzielna_grafika/based_logo.png" alt="Logo" class="logo-img">
-                    <span>GIER</span>
-                </div>
-            </a>
-        </div>
-        <div class="header-center">
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Hall of Fame</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="header-right">
-            <a href="https://steamcommunity.com/id/echo69dread/" target="_blank" class="header-steam-link">
-                <span>MÓJ STEAM</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.7 10.2c-.7 1.3-3.8 4.1-6.2 4.7 0 0-1.2.3-2.6-.3l-3.3 1.4c-.4 1-.2 2.3.6 3.1.9.9 2.2 1.1 3.3.6l1.3 2.5c.3.5 1 .7 1.5.4.5-.3.7-1 .4-1.5l-1.3-2.5c.6-1.1.3-2.6-.5-3.6l4.2-1.8c1.3.6 2.8.2 3.7-.9 1.1-1.3.8-3.3-1.1-2.1zm-8.8 9.2c-.8.4-1.8.1-2.2-.7-.4-.8-.1-1.8.7-2.2.8-.4 1.8-.1 2.2.7.4.8.1 1.8-.7 2.2zM2.8 0C1.2 0 0 1.2 0 2.8v18.4C0 22.8 1.2 24 2.8 24h18.4c1.5 0 2.8-1.2 2.8-2.8V2.8C24 1.2 22.8 0 21.2 0H2.8zM5.5 12c1.9 0 3.7.8 5 2.1l4.5-1.9c-.3-.7-.4-1.5-.2-2.3.4-1.7 2.1-2.8 3.8-2.4 1.7.4 2.8 2.1 2.4 3.8-.4 1.7-2.1 2.8-3.8 2.4-1.1-.3-2-1.1-2.4-2l-4.6 2c.2 1.2-.2 2.5-1.1 3.4-1.4 1.4-3.6 1.4-5 0-1.4-1.4-1.4-3.6 0-5z"/></svg>
-            </a>
-        </div>
+      <div class="header-left">
+        <a href="index.html" class="logo-link">
+          <div class="logo">
+            TOP
+            <img
+              src="grafika/samodzielna_grafika/based_logo.png"
+              alt="Logo"
+              class="logo-img"
+            />
+            <span>GIER</span>
+          </div>
+        </a>
+      </div>
+      <div class="header-center">
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Hall of Fame</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-right">
+        <a
+          href="https://steamcommunity.com/id/echo69dread/"
+          target="_blank"
+          class="header-steam-link"
+        >
+          <span>MÓJ STEAM</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M21.7 10.2c-.7 1.3-3.8 4.1-6.2 4.7 0 0-1.2.3-2.6-.3l-3.3 1.4c-.4 1-.2 2.3.6 3.1.9.9 2.2 1.1 3.3.6l1.3 2.5c.3.5 1 .7 1.5.4.5-.3.7-1 .4-1.5l-1.3-2.5c.6-1.1.3-2.6-.5-3.6l4.2-1.8c1.3.6 2.8.2 3.7-.9 1.1-1.3.8-3.3-1.1-2.1zm-8.8 9.2c-.8.4-1.8.1-2.2-.7-.4-.8-.1-1.8.7-2.2.8-.4 1.8-.1 2.2.7.4.8.1 1.8-.7 2.2zM2.8 0C1.2 0 0 1.2 0 2.8v18.4C0 22.8 1.2 24 2.8 24h18.4c1.5 0 2.8-1.2 2.8-2.8V2.8C24 1.2 22.8 0 21.2 0H2.8zM5.5 12c1.9 0 3.7.8 5 2.1l4.5-1.9c-.3-.7-.4-1.5-.2-2.3.4-1.7 2.1-2.8 3.8-2.4 1.7.4 2.8 2.1 2.4 3.8-.4 1.7-2.1 2.8-3.8 2.4-1.1-.3-2-1.1-2.4-2l-4.6 2c.2 1.2-.2 2.5-1.1 3.4-1.4 1.4-3.6 1.4-5 0-1.4-1.4-1.4-3.6 0-5z"
+            />
+          </svg>
+        </a>
+      </div>
     </header>
 
     <main class="container">
-        
-        <div class="intro-section">
-            <span class="typing-text" id="intro-text"></span><span class="cursor"></span>
+      <div class="intro-section">
+        <span class="typing-text" id="intro-text"></span
+        ><span class="cursor"></span>
+      </div>
+
+      <section class="steam-hero">
+        <div class="hero-content">
+          <img
+            src="grafika/glowna/avatar.jpg"
+            alt="Avatar"
+            class="steam-avatar"
+          />
+          <div class="steam-info">
+            <h2>OLEKSANDR LYSIUK</h2>
+            <p>Level Over 9000! /// SIGMA BOSS GIGACHAD GAMER</p>
+          </div>
         </div>
-
-        <section class="steam-hero">
-            <div class="hero-content">
-                <img src="grafika/glowna/avatar.jpg" alt="Avatar" class="steam-avatar">
-                <div class="steam-info">
-                    <h2>OLEKSANDR LYSIUK</h2>
-                    <p>Level Over 9000! /// SIGMA BOSS GIGACHAD GAMER</p>
-                </div>
-            </div>
-            <div class="hero-description">
-                <h2>Rzeczywistość ma kiepską fabułę, straszny grind i jest pay-to-win. Dlatego wybrałem inną drogę. Oto kolekcja tytułów, przez które zapomniałem, jak wygląda trawa. Wchodzisz na własną odpowiedzialność.<h2>
-            </div>
-            <button class="scroll-down" aria-label="Przewiń w dół" title="Przewiń w dół">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M12 5v11M5 13l7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </button>
-        </section>
-
-        <div class="tier-box emerald-theme">
-            <div class="tier-header emerald">
-                <img src="grafika/glowna/emerald_tier.png" class="tier-icon" alt="Emerald">
-                <h2>Poziom Szmaragdowy</h2>
-                <img src="grafika/glowna/emerald_tier.png" class="tier-icon" alt="Emerald">
-            </div>
-            <div class="emerald-grid">
-                <a href="game_fear.html" class="game-card emerald">
-                    <div class="card-img" style="background-image: url('grafika/karteczki/fear_card.png');"></div>
-                    <div class="card-overlay"><h3>FEAR</h3></div>
-                </a>
-                <a href="game_ds.html" class="game-card emerald">
-                    <div class="card-img" style="background-image: url('grafika/karteczki/ds_card.png');"></div>
-                    <div class="card-overlay"><h3>Dark Souls Remastered</h3></div>
-                </a>
-            </div>
+        <div class="hero-description">
+          <p>
+            Rzeczywistość ma kiepską fabułę, straszny grind i jest pay-to-win.
+            Dlatego wybrałem inną drogę. Oto kolekcja tytułów, przez które
+            zapomniałem, jak wygląda trawa. Wchodzisz na własną
+            odpowiedzialność.
+          </p>
+          <p></p>
         </div>
+        <button
+          class="scroll-down"
+          aria-label="Przewiń w dół"
+          title="Przewiń w dół"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="28"
+            height="28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 5v11M5 13l7 7 7-7"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </section>
 
-        <div class="tier-box diamond-theme">
-            <div class="tier-header diamond">
-                <img src="grafika/glowna/diamond_tier.png" class="tier-icon" alt="Diamond">
-                <h2>Poziom Diamentowy</h2>
-                <img src="grafika/glowna/diamond_tier.png" class="tier-icon" alt="Diamond">
-            </div>
-            <div class="diamond-grid">
-                <a href="game_soma.html" class="game-card diamond">
-                    <div class="card-img" style="background-image: url('grafika/karteczki/soma_card.png');"></div>
-                    <div class="card-overlay"><h3>SOMA</h3></div>
-                </a>
-                <a href="game_neon_white.html" class="game-card diamond">
-                    <div class="card-img" style="background-image: url('grafika/karteczki/neon_white_card.png');"></div>
-                    <div class="card-overlay"><h3>Neon White</h3></div>
-                </a>
-                <a href="game_hades.html" class="game-card diamond">
-                    <div class="card-img" style="background-image: url('grafika/karteczki/hades_card.jpg');"></div>
-                    <div class="card-overlay"><h3>Hades</h3></div>
-                </a>
-                <a href="game_metro.html" class="game-card diamond">
-                    <div class="card-img" style="background-image: url('grafika/karteczki/metro_card.jpg');"></div>
-                    <div class="card-overlay"><h3>Metro Exodus</h3></div>
-                </a>
-            </div>
+      <div class="tier-box emerald-theme">
+        <div class="tier-header emerald">
+          <img
+            src="grafika/glowna/emerald_tier.png"
+            class="tier-icon"
+            alt="Emerald"
+          />
+          <h2>Poziom Szmaragdowy</h2>
+          <img
+            src="grafika/glowna/emerald_tier.png"
+            class="tier-icon"
+            alt="Emerald"
+          />
         </div>
-
-        <div class="tier-box gold-theme">
-            <div class="tier-header gold">
-                <img src="grafika/glowna/gold_tier.png" class="tier-icon" alt="Gold">
-                <h2>Poziom Złoty</h2>
-                <img src="grafika/glowna/gold_tier.png" class="tier-icon" alt="Gold">
-            </div>
-            <div class="gold-grid">
-                <a href="game_sh2.html" class="game-card gold">
-                    <div class="card-img" style="background-image: url('grafika/karteczki/sh2_card.png');"></div>
-                    <div class="card-overlay"><h3>Silent Hill 2</h3></div>
-                </a>
-                <a href="game_darkwood.html" class="game-card gold">
-                    <div class="card-img" style="background-image: url('grafika/karteczki/darkwood_card.png');"></div>
-                    <div class="card-overlay"><h3>Darkwood</h3></div>
-                </a>
-                <a href="game_nv.html" class="game-card gold">
-                    <div class="card-img" style="background-image: url('grafika/karteczki/fallout_card.png');"></div>
-                    <div class="card-overlay"><h3>Fallout: New Vegas</h3></div>
-                </a>
-                <a href="game_hl1.html" class="game-card gold">
-                    <div class="card-img" style="background-image: url('grafika/karteczki/hl1_card.png');"></div>
-                    <div class="card-overlay"><h3>Half-Life</h3></div>
-                </a>
-            </div>
+        <div class="emerald-grid">
+          <a href="game_fear.html" class="game-card emerald">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;grafika/karteczki/fear_card.png&quot;);
+              "
+            ></div>
+            <div class="card-overlay"><h3>FEAR</h3></div>
+          </a>
+          <a href="game_ds.html" class="game-card emerald">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;grafika/karteczki/ds_card.png&quot;);
+              "
+            ></div>
+            <div class="card-overlay"><h3>Dark Souls Remastered</h3></div>
+          </a>
         </div>
+      </div>
 
+      <div class="tier-box diamond-theme">
+        <div class="tier-header diamond">
+          <img
+            src="grafika/glowna/diamond_tier.png"
+            class="tier-icon"
+            alt="Diamond"
+          />
+          <h2>Poziom Diamentowy</h2>
+          <img
+            src="grafika/glowna/diamond_tier.png"
+            class="tier-icon"
+            alt="Diamond"
+          />
+        </div>
+        <div class="diamond-grid">
+          <a href="game_soma.html" class="game-card diamond">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;grafika/karteczki/soma_card.png&quot;);
+              "
+            ></div>
+            <div class="card-overlay"><h3>SOMA</h3></div>
+          </a>
+          <a href="game_neon_white.html" class="game-card diamond">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;grafika/karteczki/neon_white_card.png&quot;);
+              "
+            ></div>
+            <div class="card-overlay"><h3>Neon White</h3></div>
+          </a>
+          <a href="game_hades.html" class="game-card diamond">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;grafika/karteczki/hades_card.jpg&quot;);
+              "
+            ></div>
+            <div class="card-overlay"><h3>Hades</h3></div>
+          </a>
+          <a href="game_metro.html" class="game-card diamond">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;grafika/karteczki/metro_card.jpg&quot;);
+              "
+            ></div>
+            <div class="card-overlay"><h3>Metro Exodus</h3></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="tier-box gold-theme">
+        <div class="tier-header gold">
+          <img
+            src="grafika/glowna/gold_tier.png"
+            class="tier-icon"
+            alt="Gold"
+          />
+          <h2>Poziom Złoty</h2>
+          <img
+            src="grafika/glowna/gold_tier.png"
+            class="tier-icon"
+            alt="Gold"
+          />
+        </div>
+        <div class="gold-grid">
+          <a href="game_sh2.html" class="game-card gold">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;grafika/karteczki/sh2_card.png&quot;);
+              "
+            ></div>
+            <div class="card-overlay"><h3>Silent Hill 2</h3></div>
+          </a>
+          <a href="game_darkwood.html" class="game-card gold">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;grafika/karteczki/darkwood_card.png&quot;);
+              "
+            ></div>
+            <div class="card-overlay"><h3>Darkwood</h3></div>
+          </a>
+          <a href="game_nv.html" class="game-card gold">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;grafika/karteczki/fallout_card.png&quot;);
+              "
+            ></div>
+            <div class="card-overlay"><h3>Fallout: New Vegas</h3></div>
+          </a>
+          <a href="game_hl1.html" class="game-card gold">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;grafika/karteczki/hl1_card.png&quot;);
+              "
+            ></div>
+            <div class="card-overlay"><h3>Half-Life</h3></div>
+          </a>
+        </div>
+      </div>
     </main>
-    
+
     <footer>
-        <div class="social-icons">
-            <a href="https://discord.com/users/1213901925184053318" target="_blank" class="social-icon" title="Discord">💬</a>
-            <a href="https://github.com/Kurator19p" target="_blank" class="social-icon" title="GitHub">💻</a>
-        </div>
+      <div class="social-icons">
+        <a
+          href="https://discord.com/users/1213901925184053318"
+          target="_blank"
+          class="social-icon"
+          title="Discord"
+          >💬</a
+        >
+        <a
+          href="https://github.com/Kurator19p"
+          target="_blank"
+          class="social-icon"
+          title="GitHub"
+          >💻</a
+        >
+      </div>
 
-        <div class="footer-newsletter">
-            <span class="newsletter-label">Newsletter</span>
-            <form class="newsletter-form" id="newsletter-form">
-                <input type="email" class="newsletter-input" placeholder="Twój email..." required>
-                <button type="submit" class="newsletter-btn">DOŁĄCZ</button>
-            </form>
-        </div>
+      <div class="footer-newsletter">
+        <span class="newsletter-label">Newsletter</span>
+        <form class="newsletter-form" id="newsletter-form">
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="Twój email..."
+            required
+          />
+          <button type="submit" class="newsletter-btn">DOŁĄCZ</button>
+        </form>
+      </div>
 
-        <p>&copy; 2026 Projekt zaliczeniowy. Autor: Oleksandr Lysiuk</p>
+      <p>&copy; 2026 Projekt zaliczeniowy. Autor: Oleksandr Lysiuk</p>
     </footer>
 
     <button id="back-to-top" title="Do góry">↑</button>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
