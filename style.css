@@ -1,8 +1,6 @@
-/* ==========================================================================
-   GŁÓWNE STYLE - CYBERPUNK MUSEUM
-   Autor: Oleksandr Lysiuk
-   ========================================================================== */
-
+/* =========================================================
+   0. KONFIGURACJA ZMIENNYCH I ANIMACJE (Variables & Animations)
+   ========================================================= */
 :root {
     --bg-color: #0d0d0d;
     --card-bg: #1e1e1e;
@@ -26,6 +24,9 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* =========================================================
+   1. PODSTAWOWE STYLE STRONY (Base Styles)
+   ========================================================= */
 body {
     margin: 0;
     font-family: 'Rajdhani', sans-serif;
@@ -42,7 +43,9 @@ body {
     animation: fadeInPage 0.8s ease-out forwards;
 }
 
-/* --- NAGŁÓWEK (HEADER) --- */
+/* =========================================================
+   2. NAGŁÓWEK STRONY (Header)
+   ========================================================= */
 .launcher-header {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -83,7 +86,9 @@ body {
 .header-steam-link { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem; padding: 8px 20px; border: 1px solid #333; border-radius: 4px; transition: var(--transition); background: rgba(255,255,255,0.05); }
 .header-steam-link:hover { background: #171a21; border-color: #66c0f4; color: #66c0f4; box-shadow: 0 0 15px rgba(102, 192, 244, 0.3); }
 
-/* --- HERO SECTION --- */
+/* =========================================================
+   3. SEKCJA GŁÓWNA (Hero Section)
+   ========================================================= */
 .container { 
     max-width: 1200px; margin: 0 auto; padding: 40px 20px; 
     padding-top: calc(var(--header-height) + 40px); width: 100%; box-sizing: border-box; flex: 1; 
@@ -97,16 +102,14 @@ body {
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
     background: linear-gradient(180deg, rgba(20,20,20,0.8) 0%, rgba(0,0,0,0) 100%);
     padding: 40px 20px;
-    padding-bottom: 120px; /* Reserve space for the scroll button so it doesn't overlap content */
-    min-height: calc(100vh - var(--header-height) - 40px); /* Keep hero filling the initial viewport */
+    padding-bottom: 120px; /* Rezerwacja miejsca na przycisk przewijania */
+    min-height: calc(100vh - var(--header-height) - 40px);
     margin-bottom: 40px;
     border-top: 1px solid #333; border-bottom: 1px solid #333;
     position: relative; text-align: center; box-sizing: border-box;
 }
 
-/* Reduce hero height a bit on small screens so content fits nicely */
 @media (max-width: 600px) {
-    /* More bottom padding on mobile so the scroll button doesn't cover the description */
     .steam-hero { min-height: calc(100vh - var(--header-height) - 20px); padding-bottom: 160px; }
     .hero-description { padding: 16px 20px; }
 } 
@@ -128,12 +131,13 @@ body {
     font-weight: 300;
     line-height: 1.6;
 }
-/* Scroll-down: polished circular button with subtle float + glow */
+
+/* Przycisk Scroll-down */
 .scroll-down {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 60px; /* moved higher to sit closer to hero-description */
+    bottom: 60px;
     width: 52px;
     height: 52px;
     border-radius: 50%;
@@ -160,7 +164,9 @@ body {
     .scroll-down { width: 44px; height: 44px; bottom: 22px; animation: float 2.2s ease-in-out infinite; }
 }
 
-/* --- SEKCJE TIERÓW --- */
+/* =========================================================
+   4. SEKCJE POZIOMÓW (Tier Sections)
+   ========================================================= */
 .tier-box {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -182,11 +188,13 @@ body {
 .tier-header.diamond h2 { color: var(--diamond); text-shadow: 0 0 20px rgba(0, 234, 255, 0.4); }
 .tier-header.gold h2 { color: var(--gold); text-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
 
-/* --- SIATKI GIER --- */
+/* =========================================================
+   5. SIATKI I KARTY GIER (Game Grids & Cards)
+   ========================================================= */
 .emerald-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
 .diamond-grid, .gold-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
-/* KARTY */
+/* Karty */
 .game-card {
     display: block; position: relative; background: var(--card-bg); border-radius: 8px; overflow: hidden; text-decoration: none; transition: var(--transition);
     width: 250px; aspect-ratio: 2 / 3;
@@ -208,7 +216,9 @@ body {
 .game-card.diamond:hover { box-shadow: 0 0 30px var(--diamond); border-color: #fff; }
 .game-card.gold:hover { box-shadow: 0 0 25px var(--gold); border-color: #fff; }
 
-/* --- PODSTRONY --- */
+/* =========================================================
+   6. PODSTRONY SZCZEGÓŁÓW GRY (Game Details)
+   ========================================================= */
 body.game-body { height: 100vh; overflow: hidden; }
 
 .game-split-view {
@@ -257,7 +267,9 @@ body.game-body { height: 100vh; overflow: hidden; }
 }
 .btn-steam-big:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--accent); }
 
-/* --- STOPKA --- */
+/* =========================================================
+   7. STOPKA I ELEMENTY UI (Footer & UI Elements)
+   ========================================================= */
 footer { 
     background: #080808; color: #444; border-top: 1px solid #222; 
     margin-top: auto; padding: 40px 20px; 
@@ -292,7 +304,9 @@ footer {
 }
 #quantum-cat:active { transform: scale(0.8); }
 
-/* --- RWD --- */
+/* =========================================================
+   8. RESPANSYWNOŚĆ (RWD - Mobile & Tablet)
+   ========================================================= */
 @media (max-width: 900px) {
     .launcher-header { grid-template-columns: 1fr auto; height: auto; padding: 15px; row-gap: 15px; }
     .header-center { grid-column: 1 / -1; display: flex; justify-content: center; order: 3; }
