@@ -1,6 +1,6 @@
 /**
  * PROJEKT ZALICZENIOWY - TECHNOLOGIE WEBOWE
- * Autor: Oleksandr Lysiuk
+ * Autor: 69Inoi69
  * Temat: Hall of Fame - Biblioteka Gier
  */
 
