@@ -2,12 +2,14 @@
 
 Projekt zaliczeniowy z przedmiotu **Technologie Webowe**.
 
-Czysty artefakt ery wibecodingu — stronę w całości wygenerował AI (w tamtym czasie: Gemini), a ja tylko delegowałem.
-Ale lista gier? Lista jest w 100% moja. To naprawdę mój top.
+👉 **[69inoi69.github.io/top10gier](https://69inoi69.github.io/top10gier/)**
 
-## Co to jest
+Mój osobisty ranking dziesięciu najlepszych gier. Kod w dużej mierze napisało AI, ale lista i recenzje to w 100% moje zdanie — i będę go bronić do końca.
 
-Osobisty ranking najlepszych dziesięciu gier, podzielony na poziomy:
+> Rzeczywistość ma kiepską fabułę, straszny grind i jest pay-to-win.
+> Dlatego wybrałem inną drogę.
+
+## Ranking
 
 | Poziom | Gry |
 | --- | --- |
@@ -15,38 +17,46 @@ Osobisty ranking najlepszych dziesięciu gier, podzielony na poziomy:
 | **Diamentowy** 💎 | SOMA, Neon White, Hades, Metro Exodus |
 | **Złoty** 🟡 | Silent Hill 2, Darkwood, Fallout: New Vegas, Half-Life |
 
-Każda karta otwiera podgląd z recenzją (trochę mniej poważną niż powinna być), plusami, minusami i linkiem do Steam.
+Kliknij kartę gry, a otworzy się podgląd z recenzją (trochę mniej poważną, niż powinna być), zaletami, wadami, oceną i linkiem do Steam.
+
+## Co jest na stronie
+
+- ⌨️ Efekt maszynopisu w intro
+- 🃏 Karty gier z podglądem w oknie modalnym (zamyka się krzyżykiem, kliknięciem obok albo `Esc`)
+- 📧 Newsletter, który dziękuje za zapis, ale nigdzie niczego nie wysyła — backendu nie ma, to projekt zaliczeniowy
+- ⬆️ Przycisk „do góry” i nagłówek chowający się przy przewijaniu
+- 🎨 Logo zrobione ręcznie, leży w `grafika/samodzielna_grafika/`
+- 🐈 Kot Schrödingera — w kodzie jest, na stronie go nie ma. Jednocześnie istnieje i nie istnieje
 
 ## Tech
 
-Bez frameworków, bez builda, bez `node_modules` — czysty HTML/CSS/JS, jak każe tradycja projektów zaliczeniowych:
+Bez frameworków, bez builda, bez `node_modules` — czysty HTML, CSS i JavaScript.
 
 ```
-index.html   — cała strona (to jest one-page)
-style.css    — wszystkie style
-script.js    — dane gier (GAMES) + logika modala
-grafika/     — okładki, karty tierów, logo
+index.html   — cała strona (one-page)
+style.css    — style
+script.js    — dane gier (obiekt GAMES) i cała logika
+grafika/
+  glowna/               — avatar i ikony poziomów
+  karteczki/            — obrazki na kartach gier
+  gry/                  — okładki w podglądzie gry
+  samodzielna_grafika/  — logo
 ```
 
-Odpal po prostu `index.html` w przeglądarce. Albo przez GitHub Pages — działa tak samo.
+Żeby uruchomić, wystarczy otworzyć `index.html` w przeglądarce. Wersja na żywo stoi na GitHub Pages.
 
-## Features
+## Jak to powstało
 
-- 💬 Recenzje pisane z pasją i lekkim brakiem obiektywizmu
-- 🐈 Kot Schrödingera — spróbuj złapać (jest gdzieś na stronach... może)
-- ⌨️ Efekt maszynopisu w intro
-- 📧 Newsletter, który nigdy niczego nie wysyła (formularz jest, backendu nie ma — projekt zaliczeniowy)
-- 🎨 Ręcznie robione grafiki tierów w `grafika/samodzielna_grafika/`
+- **Na początku** — stronę wygenerował Gemini, ja delegowałem i dobierałem gry.
+- **Styczeń–luty 2026** — ręczne poprawki: polskie nazwy poziomów, skalowanie kart i newslettera na telefonach, strzałka przewijania.
+- **Wrzesień 2026** — porządki przez agenta Mistral Vibe: osobne podstrony gier zamienione na jedno okno modalne, poprawiony link do Steam, usunięte prawdziwe imię i nazwisko.
+
+Czysty artefakt ery vibecodingu.
 
 ## Autor
 
 **69Inoi69** — [Steam](https://steamcommunity.com/id/69inoi69/)
 
-Wszystko powyżej wykonała AI na polecenie. Wszystko poniżej poziomów tierów to moje zdanie i broń go do końca.
-
-> Rzeczywistość ma kiepską fabułę, straszny grind i jest pay-to-win.
-> Dlatego wybrałem inną drogę.
-
 ---
 
-*© 2026 Projekt zaliczeniowy. Wygenerowane z wibem, scalone z sercem.*
+*© 2026 Projekt zaliczeniowy. Wygenerowane z vibem, scalone z sercem.*
