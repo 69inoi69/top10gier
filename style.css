@@ -13,7 +13,6 @@
     --emerald: #50c878;
     --diamond: #00eaff;
     --gold: #ffd700;
-    --iron: #a19d94;
     
     --header-height: 90px;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -217,7 +216,7 @@ body {
 .game-card.gold:hover { box-shadow: 0 0 25px var(--gold); border-color: #fff; }
 
 /* =========================================================
-   6. PODSTRONY SZCZEGÓŁÓW GRY (Game Details)
+   6. SZCZEGÓŁY GRY W MODALU (Game Details)
    ========================================================= */
 .game-split-view {
     display: flex;
@@ -254,7 +253,6 @@ body {
 
 .action-area { margin-top: auto; padding-top: 15px; border-top: 1px solid #333; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .big-rating { font-size: 2.2rem; font-weight: 800; color: var(--gold); }
-.big-rating span { font-size: 1rem; color: #666; font-weight: 400; margin-left: 5px; }
 .btn-steam-big { 
     background: var(--accent); color: #000; text-decoration: none; font-weight: 700; 
     padding: 10px 25px; text-transform: uppercase; font-size: 0.9rem;
@@ -345,7 +343,6 @@ footer p { text-align: center; font-size: 1.1rem; }
     .launcher-header { grid-template-columns: 1fr auto; height: auto; padding: 15px; row-gap: 15px; }
     .header-center { grid-column: 1 / -1; display: flex; justify-content: center; order: 3; }
     .header-right { justify-content: flex-end; }
-    .diamond-grid, .gold-grid, .emerald-grid { grid-template-columns: repeat(2, 1fr); }
     .hero-content { flex-direction: column; text-align: center; }
     .hero-description { text-align: center; border-left: none; border-top: 3px solid var(--accent); padding-left: 15px; border-radius: 0 0 10px 10px; margin-top: 20px; }
     
@@ -362,7 +359,6 @@ footer p { text-align: center; font-size: 1.1rem; }
 }
 
 @media (max-width: 600px) {
-    .diamond-grid, .gold-grid, .emerald-grid { grid-template-columns: 1fr; }
     .tier-box { padding: 20px; }
     .tier-header {
         flex-direction: column;

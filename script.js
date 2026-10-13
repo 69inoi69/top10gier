@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function typeWriter() {
             if (index < textToType.length) {
-                introElement.innerHTML += textToType.charAt(index);
+                introElement.textContent += textToType.charAt(index);
                 index++;
                 setTimeout(typeWriter, 50); 
             }
@@ -135,7 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const teleportCat = () => {
             const x = Math.random() * (window.innerWidth - 100);
             const y = Math.random() * (window.innerHeight - 100);
-            
+
+            // bottom z CSS trzeba wyłączyć, inaczej kot rozciąga się na pół ekranu
+            cat.style.bottom = 'auto';
             cat.style.left = `${x}px`;
             cat.style.top = `${y}px`;
         };
@@ -195,16 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================================
-    // 4. SYMULACJA OTWIERANIA STEAM
-    // =========================================================
-    document.querySelectorAll('a[href*="store.steampowered.com"]').forEach(link => {
-        link.addEventListener('click', () => {
-            showNotification(`🚀 Otwieranie sklepu Steam...`);
-        });
-    });
-
-    // =========================================================
-    // 5. PODGLĄD GIER W MODALU (zamiast osobnych podstron)
+    // 4. PODGLĄD GIER W MODALU (zamiast osobnych podstron)
     // =========================================================
     const modal = document.getElementById('game-modal');
     if (modal) {
@@ -262,6 +255,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 openGame(card.dataset.game);
             });
+        });
+
+        // Link do Steam w modalu dostaje adres dopiero po otwarciu gry,
+        // więc powiadomienie podpinamy bezpośrednio pod ten przycisk
+        steamEl.addEventListener('click', () => {
+            showNotification('🚀 Otwieranie sklepu Steam...');
         });
 
         closeBtn.addEventListener('click', closeModal);
