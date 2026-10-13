@@ -355,14 +355,28 @@ body {
 .game-banner {
     flex: none;
     position: relative;
-    height: clamp(200px, 46vh, 560px);
-    background-size: cover;
-    background-position: center 30%;
+    height: clamp(200px, 52vh, 640px);
     display: flex; align-items: flex-end;
+    overflow: hidden;
+    background: #0b0b0b;
+}
+/* Rozmyte przedłużenie grafiki — wypełnia miejsce po bokach */
+.game-banner::before {
+    content: ''; position: absolute; inset: -40px;
+    background: var(--art) center / cover no-repeat;
+    filter: blur(28px) brightness(0.45) saturate(1.2);
+}
+/* Sama grafika: w proporcjach 16:9, przy prawej krawędzi, lewy brzeg miękko przechodzi w rozmycie */
+.game-banner-pic {
+    position: absolute; top: 0; right: 0; bottom: 0;
+    aspect-ratio: 16 / 9; max-width: 100%;
+    background: var(--art) center / cover no-repeat;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 22%);
+            mask-image: linear-gradient(to right, transparent 0, #000 22%);
 }
 .game-banner::after {
     content: ''; position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(180deg, rgba(16,16,16,0) 35%, rgba(16,16,16,0.75) 75%, #101010 100%);
+    background: linear-gradient(180deg, rgba(16,16,16,0) 45%, rgba(16,16,16,0.7) 80%, #101010 100%);
 }
 .game-banner-text { position: relative; z-index: 1; padding: 0 32px 6px; }
 
@@ -465,6 +479,7 @@ body {
     .game-sheet > .game-body { flex: 1 0 auto; }   /* krótka recenzja: ocena i Steam i tak przy dolnej krawędzi */
     .game-sheet::-webkit-scrollbar { display: none; }
     .game-banner { height: auto; aspect-ratio: 16 / 10; min-height: 200px; }
+    .game-banner-pic { inset: 0; aspect-ratio: auto; max-width: none; -webkit-mask-image: none; mask-image: none; }
     .game-banner-text { padding: 0 20px 4px; }
     .game-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
     .game-meta span { font-size: 0.8rem; padding: 2px 8px; }
