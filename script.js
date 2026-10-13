@@ -234,10 +234,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let openedFrom = null; // karta, z której otwarto podgląd: po zamknięciu wraca na nią fokus
 
-        const openGame = (key, card) => {
+        // opener: element, na który wraca fokus po zamknięciu (karta albo miniatura na górze)
+        const openGame = (key, card, opener) => {
             const game = GAMES[key];
             if (!game) return;
-            openedFrom = card || null;
+            openedFrom = opener || card || null;
 
             // Kolor poziomu (szmaragd / diament / złoto) przechodzi na tytuł, ocenę i przycisk
             const tier = ['emerald', 'diamond', 'gold'].find(t => card && card.classList.contains(t)) || 'emerald';
@@ -268,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('open');
             modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
-            if (openedFrom) openedFrom.focus();
+            if (openedFrom) openedFrom.focus({ preventScroll: true });
         };
 
         document.querySelectorAll('.game-card').forEach(card => {
@@ -283,6 +284,54 @@ document.addEventListener('DOMContentLoaded', () => {
         steamEl.addEventListener('click', () => {
             showNotification('🚀 Otwieranie sklepu Steam...');
         });
+
+        // =====================================================
+        // 4a. "WCZYTYWANIE" BIBLIOTEKI NA PIERWSZYM EKRANIE
+        // Miniatury wszystkich 10 gier zapalają się po kolei w kolorze swojego poziomu,
+        // a gdy wszystkie są gotowe, strzałka w dół zaczyna świecić.
+        // Kliknięcie miniatury od razu otwiera podgląd gry.
+        // =====================================================
+        const row = document.getElementById('loadout-row');
+        const status = document.getElementById('loadout-status');
+        if (row && status) {
+            const cards = [...document.querySelectorAll('.game-card')];
+            const thumbs = cards.map(card => {
+                const tier = ['emerald', 'diamond', 'gold'].find(t => card.classList.contains(t));
+                const img = card.querySelector('.card-img');
+                const name = card.querySelector('h3')?.textContent || '';
+                const thumb = document.createElement('button');
+                thumb.className = 'loadout-thumb ' + tier;
+                thumb.style.backgroundImage = img ? img.style.backgroundImage : '';
+                thumb.title = name;
+                thumb.setAttribute('aria-label', 'Podgląd: ' + name);
+                thumb.addEventListener('click', () => openGame(card.dataset.game, card, thumb));
+                row.appendChild(thumb);
+                return thumb;
+            });
+
+            const total = thumbs.length;
+            const finish = () => {
+                thumbs.forEach(t => t.classList.add('loaded'));
+                status.textContent = `Biblioteka gotowa: ${total}/${total}`;
+                status.classList.add('done');
+                document.querySelector('.scroll-down')?.classList.add('ready');
+            };
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                finish();
+            } else {
+                let loaded = 0;
+                status.textContent = `Wczytano 0/${total}`;
+                const step = () => {
+                    thumbs[loaded].classList.add('loaded');
+                    loaded++;
+                    status.textContent = `Wczytano ${loaded}/${total}`;
+                    if (loaded < total) setTimeout(step, 260);
+                    else setTimeout(finish, 350);
+                };
+                setTimeout(step, 900); // startuje razem z efektem maszynopisu
+            }
+        }
 
         closeBtn.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => {
