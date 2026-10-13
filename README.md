@@ -26,7 +26,7 @@ Kliknij kartę gry, a otworzy się podgląd z recenzją (trochę mniej poważną
 - 📧 Newsletter, który dziękuje za zapis, ale nigdzie niczego nie wysyła — backendu nie ma, to projekt zaliczeniowy
 - ⬆️ Przycisk „do góry” i nagłówek chowający się przy przewijaniu
 - 🎨 Logo zrobione ręcznie, leży w `grafika/samodzielna_grafika/`
-- 🐈 Kot Schrödingera — w kodzie jest, na stronie go nie ma. Jednocześnie istnieje i nie istnieje
+- 🐈 Kot Schrödingera w lewym dolnym rogu — spróbuj go złapać
 
 ## Tech
 

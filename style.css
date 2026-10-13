@@ -13,7 +13,6 @@
     --emerald: #50c878;
     --diamond: #00eaff;
     --gold: #ffd700;
-    --iron: #a19d94;
     
     --header-height: 90px;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -89,31 +88,36 @@ body {
 /* =========================================================
    3. SEKCJA GŁÓWNA (Hero Section)
    ========================================================= */
-.container { 
-    max-width: 1200px; margin: 0 auto; padding: 40px 20px; 
-    padding-top: calc(var(--header-height) + 40px); width: 100%; box-sizing: border-box; flex: 1; 
+.container {
+    max-width: 1200px; margin: 0 auto; padding: 40px 20px;
+    /* --header-offset ustawia JS (prawdziwa wysokość nagłówka, na telefonie jest wyższy) */
+    padding-top: calc(var(--header-offset, var(--header-height)) + 20px); width: 100%; box-sizing: border-box; flex: 1;
 }
-.intro-section { text-align: center; margin-bottom: 20px; min-height: 30px; }
+
+/* Pierwszy ekran = dokładnie wysokość okna minus nagłówek, żeby strzałka była widoczna od razu */
+.first-screen {
+    display: flex; flex-direction: column;
+    min-height: calc(100vh - var(--header-offset, var(--header-height)) - 20px);
+    min-height: calc(100svh - var(--header-offset, var(--header-height)) - 20px);
+    margin-bottom: 40px;
+}
+
+.intro-section { text-align: center; margin-bottom: 16px; min-height: 30px; }
 .typing-text { font-size: 1.5rem; color: var(--accent); font-family: 'Courier New', monospace; text-transform: uppercase; letter-spacing: 2px; }
 .cursor { display: inline-block; width: 8px; height: 1.5rem; background: var(--accent); animation: blink 1s infinite; vertical-align: middle; margin-left: 5px; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 .steam-hero {
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+    flex: 1;
+    display: flex; flex-direction: column; align-items: center; gap: 20px;
     background: linear-gradient(180deg, rgba(20,20,20,0.8) 0%, rgba(0,0,0,0) 100%);
-    padding: 40px 20px;
-    padding-bottom: 120px; /* Rezerwacja miejsca na przycisk przewijania */
-    min-height: calc(100vh - var(--header-height) - 40px);
-    margin-bottom: 40px;
+    padding: 30px 20px 24px;
     border-top: 1px solid #333; border-bottom: 1px solid #333;
     position: relative; text-align: center; box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-    .steam-hero { min-height: calc(100vh - var(--header-height) - 20px); padding-bottom: 160px; }
-    .hero-description { padding: 16px 20px; }
-} 
-.hero-content { display: flex; align-items: center; gap: 30px; margin-bottom: 20px; }
+/* Wolne miejsce dzieli się po równo: treść na środku, strzałka na samym dole */
+.hero-content { display: flex; align-items: center; gap: 30px; margin-top: auto; }
 .steam-avatar { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--accent); box-shadow: 0 0 30px rgba(0, 255, 136, 0.2); object-fit: cover; }
 .steam-info h2 { margin: 0; font-size: 2.5rem; text-transform: uppercase; line-height: 1.1; letter-spacing: 2px; }
 .steam-info p { color: var(--text-muted); margin: 10px 0 0 0; font-size: 1.1rem; }
@@ -121,7 +125,6 @@ body {
 .hero-description {
     max-width: 700px;
     padding: 20px 30px;
-    margin-top: 20px;
     background: rgba(20, 20, 20, 0.6);
     border: 1px solid rgba(0, 255, 136, 0.2);
     border-left: 4px solid var(--accent);
@@ -132,13 +135,12 @@ body {
     line-height: 1.6;
     font-size: 1.2rem;
 }
+.hero-description p { margin: 0; }
 
 /* Przycisk Scroll-down */
 .scroll-down {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 60px;
+    flex-shrink: 0;
+    margin-top: auto;
     width: 52px;
     height: 52px;
     border-radius: 50%;
@@ -155,14 +157,42 @@ body {
 }
 .scroll-down svg { width: 22px; height: 22px; display: block; }
 .scroll-down:hover, .scroll-down:focus {
-    transform: translateX(-50%) scale(1.06);
     box-shadow: 0 14px 40px rgba(0,255,136,0.12);
+    border-color: rgba(0,255,136,0.4);
 }
 .scroll-down:focus { outline: 2px solid rgba(0,255,136,0.18); outline-offset: 3px; }
-@keyframes float { 0% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-6px); } 100% { transform: translateX(-50%) translateY(0); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 .scroll-down { animation: float 2.8s ease-in-out infinite; }
-@media (max-width: 600px) { 
-    .scroll-down { width: 44px; height: 44px; bottom: 22px; animation: float 2.2s ease-in-out infinite; }
+
+/* Niski ekran laptopa: ściskamy profil, żeby strzałka się zmieściła */
+@media (min-width: 601px) and (max-height: 800px) {
+    .intro-section { margin-bottom: 10px; }
+    .steam-hero { padding: 20px 20px 18px; gap: 14px; }
+    .steam-avatar { width: 110px; height: 110px; }
+    .steam-info h2 { font-size: 2.1rem; }
+    .hero-description { padding: 14px 24px; font-size: 1.1rem; line-height: 1.5; }
+}
+
+/* Telefon */
+@media (max-width: 600px) {
+    .typing-text { font-size: 0.95rem; letter-spacing: 1px; }
+    .cursor { height: 1rem; }
+    .intro-section { margin-bottom: 10px; }
+    .steam-hero { padding: 16px 12px 14px; gap: 12px; }
+    .hero-content { gap: 10px; }
+    .steam-avatar { width: 96px; height: 96px; }
+    .steam-info h2 { font-size: 1.8rem; }
+    .steam-info p { font-size: 0.95rem; margin-top: 6px; }
+    .hero-description { padding: 12px 16px; font-size: 1rem; line-height: 1.45; }
+    .scroll-down { width: 44px; height: 44px; animation-duration: 2.2s; }
+}
+
+/* Mały telefon (np. 360x640) */
+@media (max-width: 600px) and (max-height: 700px) {
+    .steam-avatar { width: 72px; height: 72px; }
+    .steam-info h2 { font-size: 1.5rem; }
+    .steam-info p { font-size: 0.85rem; }
+    .hero-description { font-size: 0.92rem; padding: 10px 14px; }
 }
 
 /* =========================================================
@@ -217,7 +247,7 @@ body {
 .game-card.gold:hover { box-shadow: 0 0 25px var(--gold); border-color: #fff; }
 
 /* =========================================================
-   6. PODSTRONY SZCZEGÓŁÓW GRY (Game Details)
+   6. SZCZEGÓŁY GRY W MODALU (Game Details)
    ========================================================= */
 .game-split-view {
     display: flex;
@@ -254,7 +284,6 @@ body {
 
 .action-area { margin-top: auto; padding-top: 15px; border-top: 1px solid #333; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .big-rating { font-size: 2.2rem; font-weight: 800; color: var(--gold); }
-.big-rating span { font-size: 1rem; color: #666; font-weight: 400; margin-left: 5px; }
 .btn-steam-big { 
     background: var(--accent); color: #000; text-decoration: none; font-weight: 700; 
     padding: 10px 25px; text-transform: uppercase; font-size: 0.9rem;
@@ -345,9 +374,8 @@ footer p { text-align: center; font-size: 1.1rem; }
     .launcher-header { grid-template-columns: 1fr auto; height: auto; padding: 15px; row-gap: 15px; }
     .header-center { grid-column: 1 / -1; display: flex; justify-content: center; order: 3; }
     .header-right { justify-content: flex-end; }
-    .diamond-grid, .gold-grid, .emerald-grid { grid-template-columns: repeat(2, 1fr); }
     .hero-content { flex-direction: column; text-align: center; }
-    .hero-description { text-align: center; border-left: none; border-top: 3px solid var(--accent); padding-left: 15px; border-radius: 0 0 10px 10px; margin-top: 20px; }
+    .hero-description { text-align: center; border-left: none; border-top: 3px solid var(--accent); border-radius: 0 0 10px 10px; }
     
     .game-modal { overflow-y: auto; }
     .game-modal .game-split-view { height: auto; min-height: 100vh; flex-direction: column; }
@@ -362,7 +390,6 @@ footer p { text-align: center; font-size: 1.1rem; }
 }
 
 @media (max-width: 600px) {
-    .diamond-grid, .gold-grid, .emerald-grid { grid-template-columns: 1fr; }
     .tier-box { padding: 20px; }
     .tier-header {
         flex-direction: column;
