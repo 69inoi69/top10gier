@@ -26,6 +26,7 @@ Click a game card to open a preview with a review (a bit less serious than it sh
 ## What's on the page
 
 - ⌨️ A typewriter intro
+- 📚 The library "loads" on the first screen: covers of all 10 games light up one by one in their tier colors — click any to open its preview
 - 🃏 Game cards that open a preview (close it with ×, a click outside, or `Esc`)
 - 📧 A newsletter form that says thanks but never sends anything — there's no backend, it's a course project
 - ⬆️ A back-to-top button and a header that hides while you scroll
