@@ -232,9 +232,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        const openGame = (key) => {
+        let openedFrom = null; // karta, z której otwarto podgląd: po zamknięciu wraca na nią fokus
+
+        const openGame = (key, card) => {
             const game = GAMES[key];
             if (!game) return;
+            openedFrom = card || null;
+
+            // Kolor poziomu (szmaragd / diament / złoto) przechodzi na tytuł, ocenę i przycisk
+            const tier = ['emerald', 'diamond', 'gold'].find(t => card && card.classList.contains(t)) || 'emerald';
+            modal.dataset.tier = tier;
 
             artEl.style.backgroundImage = `url('${game.art}')`;
             titleEl.textContent = game.title;
@@ -250,6 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ratingEl.textContent = game.rating;
             steamEl.href = game.steam;
 
+            modal.querySelectorAll('.game-sheet, .game-body').forEach(el => { el.scrollTop = 0; });
             modal.classList.add('open');
             modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
@@ -260,12 +268,13 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('open');
             modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            if (openedFrom) openedFrom.focus();
         };
 
         document.querySelectorAll('.game-card').forEach(card => {
             card.addEventListener('click', (e) => {
                 e.preventDefault();
-                openGame(card.dataset.game);
+                openGame(card.dataset.game, card);
             });
         });
 

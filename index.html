@@ -268,48 +268,50 @@
     <div id="quantum-cat" title="Złap mnie, jeśli potrafisz" aria-hidden="true">🐈</div>
 
     <div class="game-modal" id="game-modal" aria-hidden="true">
-      <button
-        class="game-modal-close"
-        id="game-modal-close"
-        aria-label="Zamknij"
+      <article
+        class="game-sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="game-modal-title"
       >
-        &times;
-      </button>
-      <div class="game-split-view">
-        <div
-          class="game-art-section"
-          id="game-modal-art"
-          role="img"
-          aria-label="Okładka gry"
-        ></div>
-        <div class="game-info-section">
-          <h1 class="game-title" id="game-modal-title"></h1>
-          <div class="game-meta" id="game-modal-meta"></div>
-          <div class="review-block">
-            <p class="review-text" id="game-modal-review"></p>
-            <div class="pros-cons">
-              <div class="pc-col pros">
-                <h3>Zalety</h3>
-                <ul id="game-modal-pros"></ul>
-              </div>
-              <div class="pc-col cons">
-                <h3>Wady</h3>
-                <ul id="game-modal-cons"></ul>
-              </div>
-            </div>
-          </div>
-          <div class="action-area">
-            <div class="big-rating" id="game-modal-rating"></div>
-            <a
-              href="#"
-              target="_blank"
-              class="btn-steam-big"
-              id="game-modal-steam"
-              >Kup na Steam</a
-            >
+        <button
+          class="game-modal-close"
+          id="game-modal-close"
+          aria-label="Zamknij"
+        >
+          &times;
+        </button>
+        <div class="game-banner" id="game-modal-art">
+          <div class="game-banner-text">
+            <h2 class="game-title" id="game-modal-title"></h2>
+            <div class="game-meta" id="game-modal-meta"></div>
           </div>
         </div>
-      </div>
+        <div class="game-body">
+          <p class="review-text" id="game-modal-review"></p>
+          <div class="pros-cons">
+            <div class="pc-col pros">
+              <h3>Zalety</h3>
+              <ul id="game-modal-pros"></ul>
+            </div>
+            <div class="pc-col cons">
+              <h3>Wady</h3>
+              <ul id="game-modal-cons"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="game-actions">
+          <div class="big-rating" id="game-modal-rating"></div>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener"
+            class="btn-steam-big"
+            id="game-modal-steam"
+            >Kup na Steam</a
+          >
+        </div>
+      </article>
     </div>
 
     <script src="script.js"></script>
