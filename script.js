@@ -7,7 +7,7 @@
 const GAMES = {
     fear: {
         title: "F.E.A.R.",
-        art: "grafika/gry/fear.jpg",
+        art: "grafika/gry/fear.webp",
         meta: ["Horror FPS", "2005", "Monolith Productions"],
         review: "To nie jest zwykła strzelanka. To symulator Johna Wicka, który przypadkiem trafił na plan filmu 'The Ring'. AI przeciwników ma wyższe IQ niż ja podczas sesji egzaminacyjnej – flankują, rzucają granaty i krzyczą. Ale to nieważne, bo Ty masz slow-mo i możesz kopnąć każdego w twarz z półobrotu. Alma to jedyna dziewczyna, która przyprawia mnie o szybsze bicie serca... ze strachu.",
         pros: ["Slow-mo robi brrr", "Można robić wślizgi i kopać z wyskoku (Karate Kid style)", "Sztuczna Inteligencja mądrzejsza od gracza", "Strzelba (Shotgun) robi miazgę"],
@@ -17,7 +17,7 @@ const GAMES = {
     },
     ds: {
         title: "DARK SOULS: REMASTERED",
-        art: "grafika/gry/ds.jpg",
+        art: "grafika/gry/ds.webp",
         meta: ["Dark Fantasy RPG", "2011/2018", "FromSoftware"],
         review: "Symulator zarządzania gniewem. Ta gra nauczyła mnie pokory, cierpliwości i dziesięciu nowych przekleństw w ciągu godziny. Wersja Remastered pozwala umierać w płynnych 60 klatkach na sekundę, co jest absolutnie piękne. Fabuła jest jak twoja wiedza na egzaminie – gdzieś tam głęboko jest, ale nikt nie wie gdzie. Pamiętaj: tutaj grawitacja zabija częściej niż bossowie. PRAISE THE SUN!",
         pros: ["Satysfakcja z wygranej (lepsza niż kawa)", "Solaire to najlepszy ziomek (Bro)", "Mapa świata to majstersztyk inżynierii", "\"Git Gud\" jako filozofia życiowa"],
@@ -27,7 +27,7 @@ const GAMES = {
     },
     soma: {
         title: "SOMA",
-        art: "grafika/gry/soma.jpg",
+        art: "grafika/gry/soma.webp",
         meta: ["Sci-Fi Horror", "2015", "Frictional Games"],
         review: "Czy jesteś prawdziwy? To nie jest zwykły horror, to 10-godzinny atak paniki egzystencjalnej pod wodą. Wchodzisz do gry, żeby bać się potworów, a wychodzisz bojąc się własnego odbicia w lustrze i tostera w kuchni. Fabuła jest tak gęsta, że rzut monetą (\"coin toss\") będzie ci się śnił po nocach. Simon myśli wolniej niż Internet Explorer, ale historia to absolutne arcydzieło.",
         pros: ["Fabuła ryje bainę (Top Tier)", "Klimat głębin (Thalassophobia w gratisie)", "Zakończenie, o którym myślisz tygodniami", "Catherine to najlepsza AI waifu"],
@@ -37,7 +37,7 @@ const GAMES = {
     },
     neon_white: {
         title: "NEON WHITE",
-        art: "grafika/gry/neon_white.jpg",
+        art: "grafika/gry/neon_white.webp",
         meta: ["Speedrun FPS", "2022", "Angel Matrix"],
         review: "Szybciej. Szybciej! To gra dla ludzi z ADHD. Biegniesz, strzelasz, używasz kart jako broni i umiejętności ruchu. Wszystko dzieje się w ułamkach sekund. Dialogi są tak \"cringe\", że aż śmieszne (anime styl), ale rozgrywka to czyste złoto. Uzależnia jak diabli.",
         pros: ["Gameplay Loop (Pętla rozgrywki)", "Muzyka (Machine Girl)", "Poczucie bycia Speedrunnerem"],
@@ -47,7 +47,7 @@ const GAMES = {
     },
     hades: {
         title: "HADES",
-        art: "grafika/gry/hades.jpg",
+        art: "grafika/gry/hades.webp",
         meta: ["Roguelike", "2020", "Supergiant Games"],
         review: "Jeszcze tylko jedna próba... Symulator ucieczki z domu, gdzie twoim ojcem jest bóg podziemi. Umierasz, wracasz, gadasz z ludźmi, ulepszasz broń, umierasz znowu. Każda śmierć popycha fabułę do przodu. Oprawa graficzna jest przepiękna, a wszyscy bogowie są nieprzyzwoicie atrakcyjni.",
         pros: ["Styl graficzny", "System walki", "Dubbing (Voice Acting)"],
@@ -57,7 +57,7 @@ const GAMES = {
     },
     metro: {
         title: "METRO EXODUS",
-        art: "grafika/gry/metro.jpg",
+        art: "grafika/gry/metro.webp",
         meta: ["FPS / Survival", "2019", "4A Games"],
         review: "Pociąg do wolności. Wyjeżdżamy z moskiewskiego metra i zwiedzamy postapokaliptyczną Rosję pociągiem Aurora. Grafika topi karty graficzne, a klimat jest tak gęsty, że trzeba go kroić bagnetem. Artem nadal nic nie mówi, co jest trochę dziwne, gdy żona wyznaje mu miłość, ale hej – strzela się wybornie.",
         pros: ["Oprawa wizualna (Ray Tracing)", "Otwarty świat (semi-open)", "Modyfikacja broni w plecaku"],
@@ -67,7 +67,7 @@ const GAMES = {
     },
     sh2: {
         title: "SILENT HILL 2",
-        art: "grafika/gry/sh2.jpg",
+        art: "grafika/gry/sh2.webp",
         meta: ["Psychological Horror", "2001/2024", "Konami"],
         review: "We mgle widzę tylko smutek. James Sunderland dostaje list od żony, która nie żyje od trzech lat. Co robi? Jedzie do miasta pełnego potworów. Logiczne, prawda? Ta gra to nie jumpscare'y, to czysta depresja w formie kodu. Piramidogłowy to nie wróg, to metafora twoich niezaliczonych kolosów.",
         pros: ["Klimat gęstszy niż mgła w Krakowie", "Muzyka Akiry Yamaoki (Masterpiece)", "Fabuła, która niszczy psychicznie"],
@@ -77,7 +77,7 @@ const GAMES = {
     },
     darkwood: {
         title: "DARKWOOD",
-        art: "grafika/gry/darkwood.jpg",
+        art: "grafika/gry/darkwood.webp",
         meta: ["Survival Horror", "2017", "Acid Wizard Studio"],
         review: "Szanuj las. Bój się nocy. Polska gra, która udowadnia, że nie potrzebujesz grafiki 3D, żeby narobić w gacie. Widok z góry, brak jumpscare'ów (teoretycznie), a klimat taki, że boisz się wyjść do toalety we własnym domu. Dźwięk w tej grze to absolutne mistrzostwo świata.",
         pros: ["Polski Gamedev górą!", "Udźwiękowienie", "System dnia i nocy"],
@@ -87,7 +87,7 @@ const GAMES = {
     },
     nv: {
         title: "FALLOUT: New Vegas",
-        art: "grafika/gry/nv.jpg",
+        art: "grafika/gry/nv.webp",
         meta: ["RPG", "2010", "Obsidian"],
         review: "Patrolowanie Mojave sprawia, że marzysz o nuklearnej zimie. Gra, w której kurier dostaje kulkę w łeb, a potem wstaje i podbija świat. Dialogi to złoto, wybory mają znaczenie, a silnik gry trzyma się na taśmie klejącej i modlitwach. Big Iron on his hip!",
         pros: ["Scenariusz i dialogi", "Swoboda działania", "Soundtrack (Radio New Vegas)"],
@@ -97,7 +97,7 @@ const GAMES = {
     },
     hl1: {
         title: "HALF-LIFE",
-        art: "grafika/gry/hl1.jpg",
+        art: "grafika/gry/hl1.webp",
         meta: ["FPS", "1998", "Valve"],
         review: "Gordon Freeman. Człowiek, który spóźnił się do pracy i przypadkiem wywołał inwazję obcych. Gra, która zdefiniowała gatunek FPS. Brak cutscenek, czysta narracja przez środowisko i łom jako najlepsze narzędzie dyplomacji. Klasyka, którą trzeba znać.",
         pros: ["Rewolucyjna narracja", "Fizyka (jak na tamte czasy)", "Łom (Crowbar)"],
@@ -332,6 +332,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(step, 900); // startuje razem z efektem maszynopisu
             }
         }
+
+        // Grafiki do podglądu gier ściągamy w tle, gdy strona już się wczytała:
+        // wtedy po kliknięciu karty obrazek jest od razu, bez czekania
+        window.addEventListener('load', () => {
+            const preload = () => Object.values(GAMES).forEach(g => { new Image().src = g.art; });
+            if ('requestIdleCallback' in window) requestIdleCallback(preload, { timeout: 2000 });
+            else setTimeout(preload, 1000);
+        });
 
         closeBtn.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => {
