@@ -108,7 +108,19 @@ const GAMES = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
+    // Prawdziwa wysokość nagłówka (na telefonie zawija się do dwóch rzędów),
+    // potrzebna, żeby pierwszy ekran ze strzałką mieścił się w oknie
+    const headerEl = document.querySelector('.launcher-header');
+    const syncHeaderOffset = () => {
+        if (headerEl) {
+            document.documentElement.style.setProperty('--header-offset', `${headerEl.offsetHeight}px`);
+        }
+    };
+    syncHeaderOffset();
+    window.addEventListener('resize', syncHeaderOffset);
+    window.addEventListener('load', syncHeaderOffset);
+
     // =========================================================
     // 0. EFEKT PISANIA NA STRONIE GŁÓWNEJ (Intro Typing Effect)
     // =========================================================
@@ -277,9 +289,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (scrollBtn) {
         scrollBtn.addEventListener('click', () => {
             const nextSection = document.querySelector('.tier-box');
-            const headerHeight = document.querySelector('.launcher-header')?.offsetHeight || 0;
             if (nextSection) {
-                const targetY = nextSection.getBoundingClientRect().top + window.scrollY - headerHeight;
+                // Przy przewijaniu w dół nagłówek się chowa, więc wystarczy mały odstęp
+                const targetY = nextSection.getBoundingClientRect().top + window.scrollY - 16;
                 window.scrollTo({ top: targetY, behavior: 'smooth' });
             } else {
                 window.scrollTo({ top: window.scrollY + window.innerHeight, behavior: 'smooth' });
