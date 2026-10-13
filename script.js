@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tier = ['emerald', 'diamond', 'gold'].find(t => card && card.classList.contains(t)) || 'emerald';
             modal.dataset.tier = tier;
 
-            artEl.style.backgroundImage = `url('${game.art}')`;
+            artEl.style.setProperty('--art', `url('${game.art}')`); // tło (rozmyte) i sam obrazek biorą go z tej zmiennej
             titleEl.textContent = game.title;
             metaEl.innerHTML = '';
             game.meta.forEach(m => {
