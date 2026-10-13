@@ -322,7 +322,7 @@ body {
     --tier-glow: rgba(80, 200, 120, 0.35);
     position: fixed; inset: 0; z-index: 3000;
     display: flex; align-items: center; justify-content: center;
-    padding: 4vh 3vw;
+    padding: 3vh 4vw;
     background: rgba(0, 0, 0, 0.82);
     backdrop-filter: blur(8px);
     opacity: 0; visibility: hidden;
@@ -337,7 +337,7 @@ body {
 .game-sheet {
     position: relative;
     box-sizing: border-box;
-    width: min(1040px, 100%);
+    width: min(1320px, 100%);
     max-height: 100%;
     display: flex; flex-direction: column;
     background: #101010;
@@ -355,7 +355,7 @@ body {
 .game-banner {
     flex: none;
     position: relative;
-    height: clamp(170px, 34vh, 360px);
+    height: clamp(200px, 46vh, 560px);
     background-size: cover;
     background-position: center 30%;
     display: flex; align-items: flex-end;
@@ -445,7 +445,7 @@ body {
 
 /* Niski ekran (laptop): mniejszy baner i ciaśniej */
 @media (min-width: 761px) and (max-height: 820px) {
-    .game-banner { height: clamp(150px, 28vh, 260px); }
+    .game-banner { height: clamp(160px, 36vh, 300px); }
     .game-body { padding-top: 16px; padding-bottom: 18px; gap: 26px; }
     .review-text { font-size: 1.04rem; line-height: 1.5; }
     .pc-col li { font-size: 0.95rem; }
